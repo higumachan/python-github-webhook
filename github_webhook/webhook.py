@@ -5,6 +5,7 @@ import logging
 
 import six
 from flask import abort, request
+from .event import Event
 
 
 class Webhook(object):
@@ -26,7 +27,7 @@ class Webhook(object):
             secret = secret.encode('utf-8')
         self._secret = secret
 
-    def hook(self, event_type='push'):
+    def hook(self, event_type=Event.Push):
         """
         Registers a function as a hook. Multiple hooks can be registered for a given type, but the
         order in which they are invoke is unspecified.
@@ -35,7 +36,7 @@ class Webhook(object):
         """
 
         def decorator(func):
-            self._hooks[event_type].append(func)
+            self._hooks[event_type.value].append(func)
             return func
 
         return decorator
