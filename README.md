@@ -27,7 +27,7 @@ def hello_world():
 def on_push(data):
     print("Got push with: {0}".format(data))
 
-@webhook.hook(event_type=Event.Ping)        # Defines a handler for the 'ping' event
+@webhook.hook(event_type=EventType.Ping)        # Defines a handler for the 'ping' event
 def on_push(data):
     print("Got push with: {0}".format(data))
 
