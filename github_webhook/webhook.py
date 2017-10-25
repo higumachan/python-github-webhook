@@ -27,7 +27,7 @@ class Webhook(object):
             secret = secret.encode('utf-8')
         self._secret = secret
 
-    def hook(self, event_type=Event.push):
+    def hook(self, event_type=Event.Push):
         """
         Registers a function as a hook. Multiple hooks can be registered for a given type, but the
         order in which they are invoke is unspecified.
