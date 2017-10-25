@@ -13,7 +13,7 @@ orginally developed for Bloomberg's GHE install.
 receives push events all it takes is:
 
 ```py
-from github_webhook import Webhook, Event
+from github_webhook import Webhook, EventType
 from flask import Flask
 
 app = Flask(__name__)  # Standard Flask app
